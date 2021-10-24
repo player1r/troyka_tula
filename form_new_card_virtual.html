@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- <script type="text/javascript">
+            $(document).ready(function(){
+                $('body').append('<br/>Этот текст добавлен с помощью jQuery');
+            });
+        </script> -->
+        
+        <!-- Jquery -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" type="text/javascript"></script>
+        <script src="https://cdn.jsdelivr.net/npm/suggestions-jquery@20.3.0/dist/js/jquery.suggestions.min.js"></script>
+
+        <!-- Masks-->
+        <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
+        <script src="../src/js/masks.js"></script>
+
+        <!-- DaData -->
+        <link href="https://cdn.jsdelivr.net/npm/suggestions-jquery@20.3.0/dist/css/suggestions.min.css" rel="stylesheet" />
+        <script src="../src/js/dadata.js"></script>
+        
+        <!-- css -->
+        <link rel="stylesheet" href="assets/theme.min.css">
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+        <title>Транспортная карта «Тройка»</title>
+
+    </head>
+    <body>
+        
+        <!-- Header -->
+        <div class="header">
+            <div class="container">
+                <div class="image">
+                    <img src="assets/images/logo.png">
+                </div>
+
+                <div class="title">
+                    Оформление виртуальной карты «Тройка»
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Content -->
+        <div class="form_part">
+            <!-- Form_place -->
+            <div class="forma">
+                <!-- Breadcrumbs -->
+                <div class="breadcrumbs">
+                    <ol>
+                        <li class="visited"><a href="index.html">Назад</a></li>
+                        <li class="current">Выпуск новой карты</li>
+                    </ol>
+                </div>
+                <!-- Title -->
+                <h1>Выпуск новой карты</h1>
+                <h2>Заполните информацию о себе</h2>
+                <!-- Form -->
+                <div class="form_place">
+                    <form name="form" id="form" action="#" class="form_style">
+                        <!-- name -->
+                        <input class="form_input" name="surname" id="surname" placeholder="Фамилия" type="text" required>
+                        <!-- surname -->
+                        <input class="form_input" name="name" id="name" placeholder="Имя" type="text" required>
+                        <!-- middlename -->
+                        <input class="form_input" name="patronymic" id="patronymic" placeholder="Отчество" type="text" required>
+                        <!-- gender -->
+                        <select class="form_input" name="gender_select" id="gender_select" placeholder="Пол" required>
+                            <option class="first" value="" disabled selected>Пол</option>                        
+                            <option>Женский</option>
+                            <option>Мужской</option>
+                        </select>
+                        <!-- birthday : onblur не использовал, так как с ним не сохраняется автозаполнение поля -->
+                        <input class="form_input" name="birthday" id="birthday" placeholder="Дата рождения" type="text" onfocus="(this.type='date')" required>
+                        <!-- email -->
+                        <input class="form_input" name="email" id="email" placeholder="Электронная почта" type="email" required>
+                        <!-- phone -->
+                        <input class="form_input" name="phone" id="phone" placeholder="Номер телефона" type="text" required>
+                        <!-- submit -->
+                        <input class="form_input_submit" type="submit" value="Отправить"> 
+                    </form>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <a href="#">Политика конфиденциальности</a>
+                <a href="#">Карта сайта</a>
+                <a href="https://t.me/nkta_frolov" title="Telegram" target="_blank">Автор: @nkta_frolov</a>
+            </div>
+        </div>
+    </body>
+</html>

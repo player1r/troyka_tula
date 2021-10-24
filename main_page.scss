@@ -1,0 +1,335 @@
+$title-color: black;
+$header-height: 90px;
+$link-color: white;
+
+body {
+    background: linear-gradient(90deg, #3B2864 0%, #EC296E 50%, #FF5021 70%, #FFA000 100%);
+    backdrop-filter: blur(10px);
+}
+
+.header {
+    height: $header-height;
+    width: 100%;
+    background-color: white;    
+    display: flex;
+    justify-content: center;
+
+    .container {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;        
+
+        .image {
+            img {
+                height: 30px;
+            }
+        }  
+
+        .title {
+            margin-left: 30px;
+            color: $title-color;
+            font-size: 1.5em;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+        }  
+    }
+}
+
+.main_part {
+    position: absolute;//для абсолютного позиционирования родительского блока относительно .header для полного заполнения экрана (высота=100vh)
+    top: 0;
+    display: flex;//присвоение свойств дочерним блокам
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    padding-top: $header-height;
+    font-family: 'Roboto', sans-serif;
+
+    .choice_and_card {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        height: 95%;
+
+        .elemet_of_choice_and_card {
+            height: 100%;
+            width: 50%;      
+            display: flex;
+            flex-direction: column;            
+            align-items: center;
+            justify-content: center;
+
+            img {
+                max-height: 200px;
+                //filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.3));
+            }
+
+            .choice_part {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+
+                .text {
+                    color: $link-color;
+                    font-size: 24px;                    
+                    line-height: 30px;
+                    margin-bottom: 20px;
+
+                    h1 {
+                        font-size: 32px;
+                        line-height: 50px;
+                        margin-bottom: 20px;
+                    }
+                }
+
+                .buttons {
+                    margin-top: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+
+                    a {
+                        font-size: 18px;
+                        text-align: center;
+                        color: $link-color;
+                        border: 2px solid $link-color;
+                        border-radius: 20px;
+                        padding: 20px 0;
+                        margin-bottom: 20px;
+                        width: 70%;
+
+                        &:hover {
+                            font-weight: 600;
+                            transition: 0.3s;
+                            background-color: $link-color;
+                            color: #EC296E;
+                        }
+                    }
+
+                }
+            }
+
+        }
+    }
+
+    
+    .footer {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 10px;
+
+        a {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 12px;
+            color: $link-color;
+            position: relative;
+            margin: 10px;
+
+            &:hover {
+                margin: 4px 0;
+                border-radius: 5px;
+                border: 1px solid white;
+                padding: 5px 9px;
+            }
+        }
+    }
+}
+
+.form_part {
+    position: absolute; //для простоты вёрстки за основу был взят блок .main_part
+    top: 0;
+    display: flex;//присвоение свойств дочерним блокам
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding-top: $header-height;
+    font-family: 'Roboto', sans-serif;
+
+    .forma {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+
+        .forma_old {
+            height: 78.85vh;
+        }
+
+        .breadcrumbs {
+            margin: 10px 0;
+            ol {
+                .visited {
+                    a {
+                        color: #FFA000;
+
+                        &:hover {
+                            transition: 0.2s;
+                            color: #EC296E;
+                        }
+                    }
+                }
+
+                .current {
+                    color: $link-color;
+                }
+
+                li {
+                    display: inline;  
+
+                    &:after {
+                        display: inline-block;
+                        content: '';
+                        height: 16px;
+                        width: 16px;
+                        background: url(../../static/assets/images/cd-custom-separator.svg) no-repeat center center;
+                        vertical-align: middle;
+                        margin-left: 5px;
+                    }
+
+                    &:last-of-type::after {
+                        display: none;
+                    }                    
+                }                
+            }
+        }
+
+        h1 {
+            color: $link-color;
+            font-size: 32px;
+            line-height: 50px;
+        }
+
+        h2 {
+            color: $link-color;
+            font-size: 24px;
+            line-height: 30px;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .form_place {
+            width: 70%;
+
+            form.form_style {
+                width: 100%;
+                background-color: white;
+                border-radius: 15px;
+                display: flex;
+                flex-direction: column;
+                padding: 50px;          
+
+                .form_input {
+                    width: 100%;
+                    padding: 20px;
+                    margin-top: 25px;
+                    background-color: #f3f2fa;
+                    border-radius: 15px;
+
+                    &:first-child {
+                        margin-top: 0;
+                    }
+
+                    &:hover {
+                        border: 2px solid #FF5021;
+                        padding: 18px;
+                    }                       
+                }  
+                
+                input[type="date"]{
+                    padding: 18px;
+
+                    &:hover {
+                        padding: 16px;
+                    }
+                }
+
+                select:required:invalid {
+                    color: #757575;
+                }
+
+                option[value=""][disabled] {
+                    display: none;
+                }
+
+                option {
+                    color: black;
+                }
+
+                .form_input_submit {
+                    margin-top: 25px;
+                    width: 100%;
+                    padding: 18px;
+                    background-color: white;
+                    border-radius: 15px;
+                    border: 2px solid #FF5021;
+                    color: #FF5021;
+                    font-weight: 400;
+
+                    &:hover {
+                        transition: 0.3s;
+                        background-color: #FF5021;
+                        color: white;
+                        font-weight: 500;
+                    }
+                }
+                
+            }
+        }
+    }
+
+    
+
+    .footer {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 10px 0;
+
+        a {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 12px;
+            color: $link-color;
+            position: relative;
+            margin: 10px;
+
+            &:hover {
+                margin: 4px 0;
+                border-radius: 5px;
+                border: 1px solid white;
+                padding: 5px 9px;
+            }
+        }
+    }
+}
+
+
+//Настройка адаптивности нереализована, так как такое задание отсутствует
+@include sfx-media-down(810px){
+    // .main_part {}
+}
+
+@include sfx-media-down(756px){
+    // .main_part {} 
+}
+
+@include sfx-media-down(650px){
+    // .main_part {}  
+}
+
+@include sfx-media-down(470px){
+    // .main_part {} 
+}
+
+@include sfx-media-down(390px){
+    // .main_part {}
+}
